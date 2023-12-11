@@ -13,7 +13,7 @@
     <div>                                                           
 		
 		<a href="index.php?page=start">Start</a> |             	<!-- div erzeugt einen container -->            
-        <a href="index.php?page=contacts">Kontakte</a> |       		<!-- a erzeugt einen Link -->         
+        	<a href="index.php?page=contacts">Kontakte</a> |       	<!-- a erzeugt einen Link -->         
 		<a href="index.php?page=legal">Projekte</a>  |          <!-- href legt das Ziel des Links fest -->
 		<a href="index.php?page=legal">Impressum</a>
 				
