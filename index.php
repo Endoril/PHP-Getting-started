@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">  <!-- Webseitensprache auf deutsch, sonst nervt dich der Browser weil er immer alles übersetzen will -->
+<html lang="de"> <!-- Webseitensprache auf deutsch, sonst nervt dich der Browser weil er immer alles übersetzen will -->
 
 <head>
     <meta charset="UTF-8">
@@ -22,8 +22,9 @@
 
 
     <?php
+    require_once("werkzeug.php"); //Der Ordnung halber würde ich Holfsfunktionen irgendwo hinpacken wo sie nicht stören
 
-
+    // Wenn man das so macht hast du den Vorteil das du die einzelnen Seiten immer noch bequem pflegen kannst aber übersichtlicher.
 
     if (isset($_GET['page']) and $_GET['page'] === 'contacts') {
         require("contacts.php");
@@ -34,7 +35,7 @@
     } else if (isset($_GET['page']) and $_GET['page'] === 'projects') {
         require("projects.php");
 
-    } else if (isset($_GET['page']) and $_GET['page'] === 'legal') {
+    } else if (holeGet("page") === 'legal') {  // Etwas nicer wenn du eine eigene Funktion hast um vom Get sachen zu holen. Siehe Werkzeugkasten.php
         require("legal.php");
     }
 
