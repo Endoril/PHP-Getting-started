@@ -32,7 +32,7 @@
     } else if (isset($_GET['page']) and $_GET['page'] === 'start') {
         require("start.php");
 
-    } else if (isset($_GET['page']) and $_GET['page'] === 'projects') {
+    } else if (isset($_GET['page']) and $_GET['page'] === 'projects') { //Kann man so machen ist aber nicht so optimal, besser wäre ...
         require("projects.php");
 
     } else if (holeGet("page") === 'legal') {  // Etwas nicer wenn du eine eigene Funktion hast um vom Get sachen zu holen. Siehe Werkzeugkasten.php
