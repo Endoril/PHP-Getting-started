@@ -1,99 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
- 
+<html lang="de">  <!-- Webseitensprache auf deutsch, sonst nervt dich der Browser weil er immer alles übersetzen will -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document</title> <!-- Das ist der Name den der Tab im Browser später hat -->
 </head>
 
 
 <body>
-   
-    <div>                                                           
-		
-		<a href="index.php?page=start">Start</a> |             <!-- div erzeugt einen container -->            
-        	<a href="index.php?page=contacts">Kontakte</a> |       <!-- a erzeugt einen Link -->         
-		<a href="index.php?page=projects">Projekte</a>  |      <!-- href legt das Ziel des Links fest -->
-		<a href="index.php?page=legal">Impressum</a>
-				
-    </div>   
-    
 
-                                                                
-    <?php                                                       
-                     
-                                                                
-        $headline = 'Herzlich willkommen!';
+    <div>
+
+        <a href="index.php?page=start">Start</a> | <!-- div erzeugt einen container -->
+        <a href="index.php?page=contacts">Kontakte</a> | <!-- a erzeugt einen Link -->
+        <a href="index.php?page=projects">Projekte</a> | <!-- href legt das Ziel des Links fest -->
+        <a href="index.php?page=legal">Impressum</a>
+
+    </div>
 
 
-        if($_GET['page'] === 'contacts')
-        {
 
-        $headline = 'Deine Kontakte';
-
-        }
+    <?php
 
 
-        if($_GET['page'] === 'projects')
-        {
 
-        $headline = 'Meine Projekte';
+    if (isset($_GET['page']) and $_GET['page'] === 'contacts') {
+        require("contacts.php");
 
-        }
+    } else if (isset($_GET['page']) and $_GET['page'] === 'start') {
+        require("start.php");
 
+    } else if (isset($_GET['page']) and $_GET['page'] === 'projects') {
+        require("projects.php");
 
-        if($_GET['page'] === 'legal')
-        {
-
-        $headline = 'Impressum';
-
-        }
-        
-                                                               
-        echo '<h1>' . $headline . '</h1>';                 
-             
-
-        //wenn man zB auf Kontakte klickt, soll ein individueller Text angezeigt werden
-        //wieso braucht man dafür zwei if Abfragen und schreibt es nicht in eine ??
-
-
-        if($_GET['page'] === 'contacts')                        
-        { 
-            
-             echo "<p> Hier siehst du deine <b>Kontakte</b></p>";   
-
-        }
-
-
-        else if($_GET['page'] === 'projects')                                                   
-        {
-
-            echo "<p> Hier siehst du meine <b>Projekte</b></p>";                 
-
-        }
-
-
-        else if($_GET['page'] === 'legal')                                                   
-        {
-
-            echo "<p> Hier siehst du das <b>Impressum</b></p>";                 
-
-        }
-
-
-        else                                                   
-        {
-
-            echo 'Du bist auf der Startseite';                 
-
-        }
-
+    } else if (isset($_GET['page']) and $_GET['page'] === 'legal') {
+        require("legal.php");
+    }
 
 
     ?>
-
-    </body>
+</body>
 
 
 </html>
